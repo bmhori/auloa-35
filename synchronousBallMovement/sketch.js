@@ -4,7 +4,7 @@ var position;
 
 function setup(){
   database = firebase.database();
-  console.log(database);
+ console.log(database);
   createCanvas(500,500);
 
   hypnoticBall = createSprite(250,250,10,10);
@@ -17,7 +17,7 @@ function setup(){
 
 function draw(){
   background("white");
-  
+  if(position !== undefined){
     if(keyDown(LEFT_ARROW)){
       writePosition(-1,0);
     }
@@ -31,7 +31,7 @@ function draw(){
       writePosition(0,+1);
     }
     drawSprites();
-  
+  }
 }
 
 function writePosition(x,y){
